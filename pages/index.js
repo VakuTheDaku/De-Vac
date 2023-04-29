@@ -1,11 +1,12 @@
 import { useLoadScript, GoogleMap, MarkerF } from '@react-google-maps/api';
 import { useEffect, useMemo, useState } from 'react';
 import styles from '../styles/Home.module.css';
+import { useRouter } from 'next/router';
 const Home = ({ getContract }) => {
   const [position, setPosition] = useState({ lat: null, lng: null });
   const libraries = useMemo(() => ['places'], []);
-  
-
+  const [hospital, setHospital] = useState([])
+  const router = useRouter()
   const mapOptions = useMemo(
     () => ({
       disableDefaultUI: true,
@@ -17,14 +18,18 @@ const Home = ({ getContract }) => {
   const handleHospitals = async () => {
     var request = {
       location: new google.maps.LatLng(position.lat, position.lng),
-      radius: '50000',
+      radius: '1000',
       type: ['hospital'],
       key: process.env.GOOGLE_MAPS_API_KEY
     };
     const map = new google.maps.Map(document.getElementById('map'));
     const service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, (results, status) =>{
-      console.log(results)
+    service.nearbySearch(request, (results, status) => {
+      const li = []
+      results.forEach((result) => {
+        console.log(result)
+        setHospital(hos => [...hos, result.name])
+      })
     })
 
   }
@@ -107,27 +112,39 @@ const Home = ({ getContract }) => {
             } else {
               console.error('Geolocation is not supported by this browser.');
             }
-            
-          }}>Click</button>
-          <button onClick={async ()=> await handleHospitals()}> Get hospitals near me</button>
+
+          }}>My location</button>
+          <button onClick={async () => await handleHospitals()}>Hospitals near me</button>
+          <div className='grid place-items-center'>
+            <button className='btn btn-success' onClick={() => connectWalletProvider()}>
+              Connect to Metamask
+            </button>
+          </div>
         </div>
-        <GoogleMap
-          options={mapOptions}
-          zoom={14}
-          center={position}
-          id='map'
-          mapTypeId={google.maps.MapTypeId.ROADMAP}
-          mapContainerStyle={{ width: '800px', height: '800px' }}
-          onLoad={() => console.log('Map Component Loaded...')}
-        >
-          <MarkerF position={position} onLoad={() => console.log('Marker Loaded')} />
-        </GoogleMap>
+        {
+          hospital.length !== 0 ?
+            hospital.map(hos => {
+              return (
+                <ul style={{width: '100%'}}>
+                  <li style={{ text: "yellow" }} onClick={()=>router.push(`/detail/${hos}`)}>name : {hos}</li>
+                </ul>
+              )
+            })
+            :
+            <GoogleMap
+              options={mapOptions}
+              zoom={14}
+              center={position}
+              id='map'
+              mapTypeId={google.maps.MapTypeId.ROADMAP}
+              mapContainerStyle={{ width: '800px', height: '800px' }}
+              onLoad={() => console.log('Map Component Loaded...')}
+            >
+              <MarkerF position={position} onLoad={() => console.log('Marker Loaded')} />
+            </GoogleMap>
+        }
       </div>
-      <div className='h-[90vh] grid place-items-center'>
-        <button className='btn btn-success' onClick={() => connectWalletProvider()}>
-          Connect to Metamask
-        </button>
-      </div>
+
     </>
   );
 };
