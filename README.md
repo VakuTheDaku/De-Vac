@@ -11,7 +11,7 @@ ________________________________________________________________________________
 
 1.Open DeMed in your browser
 
-2.Login to your MetaMask and add Etherum to your Metamask networks. 
+2.Login to your MetaMask and add Etherum to your Metamask networks. (currently the smart contract is deployed in ganache) 
 
 3.Connect DeMed website to Metamask.
 
