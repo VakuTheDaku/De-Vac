@@ -9,7 +9,7 @@ The need of vaccines are always a undoubted need for the society. Recently we ca
 _________________________________________________________________________________________________________________________________________________________________________________________________
 ## How to use DeMed?
 
-1. Open DeMed in your browser
+1.Open DeMed in your browser
 
 2.Login to your MetaMask and add Etherum to your Metamask networks. 
 
