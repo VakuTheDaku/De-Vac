@@ -1,15 +1,20 @@
-####### DeMed
-# A blockchain based vaccine distribution system to prevent corruption in medical supply chain.
+# DeMed
+A blockchain based vaccine distribution system to prevent corruption in medical supply chain.
 
 
 _________________________________________________________________________________________________________________________________________________________________________________________________
 ## Why DeMed
+
 The need of vaccines are always a undoubted need for the society. Recently we came to notice many scams in this sector. From public not being aware about the availability of life saving vaccines to black sale of medicines by authorities is a threat to common man. What about all these data being visible to the public? This is when the thought of DeMed arouse. DeMed is a decentralized App tracking the vaccine distribution, which helps user to locate the nearest hospital having the required vaccines. One can enable their location and find the nearby hospitals and the availability of vaccines there. We are tracking the supply of vaccines from the manufacturers itself, and make the transactions transparent, thereby reduces the scam.
 _________________________________________________________________________________________________________________________________________________________________________________________________
 ## How to use DeMed?
+
 1. Open DeMed in your browser
+
 2.Login to your MetaMask and add Etherum to your Metamask networks. 
+
 3.Connect DeMed website to Metamask.
+
 4.Go ahead and explore DeMed.
 _________________________________________________________________________________________________________________________________________________________________________________________________
 
