@@ -1,5 +1,5 @@
 const contractABI = require("./Contract.json");
-const YOUR_CONTRACT_ADDRESS = "0xaecCA6116AdfeBB56e587164BB0A199a244a0dd7";
+const YOUR_CONTRACT_ADDRESS = "0x778344a873E2B4b9E53C7Ea2C4847bcE20Aa346c";
 import { ethers } from "ethers"
 const getContract = (window) => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
