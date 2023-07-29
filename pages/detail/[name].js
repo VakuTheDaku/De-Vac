@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { getVaccineCount } from '../../utils/interactions';
 
 function Search({ getContract }) {
   const router = useRouter();
@@ -9,6 +10,8 @@ function Search({ getContract }) {
   const [record, setRecord] = useState([])
   const [vaccine, setVaccine] = useState()
   let fetchAllRecords = async () => {
+    const data = await getVaccineCount('0x468D1d9Dac63e8EcBa9883fF5F40582575D07aAa', window)
+    console.log("data", data)
     let count = await getContract(window).getRecordCount();
 
     for (let i = 0; i < count; i++) {

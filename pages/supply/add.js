@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { setVaccineCount } from "../../utils/interactions";
 
 export default function Add({ getContract }) {
     const [state, setState] = useState()
@@ -13,8 +14,7 @@ export default function Add({ getContract }) {
     }
     async function createRecord() {
         console.log(state)
-        await getContract(window).createRecord(String(state.org), state.patient, state.medicine, parseInt(state.count))
-
+        await setVaccineCount('0x468D1d9Dac63e8EcBa9883fF5F40582575D07aAa', 50, window )
     }
     return (
         <>
