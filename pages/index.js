@@ -1,6 +1,7 @@
 import { useLoadScript, GoogleMap, MarkerF } from '@react-google-maps/api';
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
+import SwiperComponent from '../components/swiperComponent';
 
 const Home = ({ getContract }) => {
   const [position, setPosition] = useState({ lat: null, lng: null });
@@ -157,13 +158,8 @@ const Home = ({ getContract }) => {
                   <MarkerF position={position} onLoad={() => console.log('Marker Loaded')} />
                 </GoogleMap>
               :
-              <div className='grid place-items-center h-[100vh]'>
-                <div className='w-[400px] h-[400px] absolute bg-opacity-40 rounded-full bg-[#B2F4D3]'>
-                </div>
-                <div className='text-[96px] font-bold'>
-                  DE-VAC
-                </div>
-              </div>
+              <SwiperComponent>
+              </SwiperComponent>
           }
         </div>
       </div>

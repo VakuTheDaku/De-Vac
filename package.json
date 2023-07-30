@@ -9,13 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/next-js": "^2.1.5",
+    "@chakra-ui/react": "^2.8.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@react-google-maps/api": "^2.18.1",
     "@solana/web3.js": "^1.75.0",
     "axios": "^1.4.0",
     "ethers": "^5.7.2",
+    "framer-motion": "^10.15.0",
     "next": "13.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "swiper": "^8.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
