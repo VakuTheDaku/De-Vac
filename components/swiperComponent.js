@@ -36,16 +36,21 @@ export default function SwiperComponent({ children }) {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-full">
-                        <div className="absolute z-10">
-                            <Image
-                                src="/vaccine.jpg"
-                                layout="fill"
-                                objectFit="cover"
-                                quality={100}
-                            />
-                        </div>
-                        <div> KNOW VACCINE AVAILABILITY </div>
+                    <div className="grid place-items-center h-[100vh] w-full">
+
+                        <Image
+                            className='h-full w-full opacity-30'
+                            src="/vaccine.jpg"
+                            layout='fill'
+                            objectFit='contain'
+                        />
+
+                        <div className='absolute text-6xl grid font-bold text-black opacity-70 gap-6'>
+                            <div>
+                                KNOW VACCINE AVAILABILITY
+                            </div>
+                            <div className='flex items-center uppercase justify-center text-4xl text-black opacity-80'>
+                                At hospitals</div> </div>
                     </div>
                 </SwiperSlide>
             </Swiper>
